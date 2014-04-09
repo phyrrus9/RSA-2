@@ -24,6 +24,6 @@ bigint rsa2_encrypt(bigint, bigint, bigint);
 bigint rsa2_decrypt(bigint, bigint, bigint);
 rsa2_error rsa2_encrypt_file(char *, char *, char *);
 rsa2_error rsa2_decrypt_file(char *, char *, char *);
-rsa2_error rsa2_write_keys(bigint, bigint, bigint, char *base = (char *)"rsa2");
+rsa2_error rsa2_write_keys(bigint, bigint, bigint, unsigned int bits = 4096, char *base = (char *)"rsa2");
 
 #endif

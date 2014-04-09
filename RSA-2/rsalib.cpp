@@ -80,6 +80,38 @@ rsa2_error rsa2_encrypt_file(char *keyfile, char *infile, char *outfile)
 	return RSA2_NO_ERR;
 }
 
+rsa2_error rsa2_write_keys(bigint n, bigint d, bigint e, unsigned int bits, char *base)
+{
+	char pubkeyfile[1024], privkeyfile[1024];
+	unsigned char *obuf;
+	FILE *pubkey, *privkey;
+	sprintf(pubkeyfile, "%s.pub", base);
+	sprintf(privkeyfile, "%s.pri", base);
+	if ((pubkey = fopen(pubkeyfile, "wb")) == NULL)
+		return RSA2_FILE_ERR;
+	if ((privkey = fopen(privkeyfile, "wb")) == NULL)
+	{
+		n.resize(bits);
+		d.resize(bits);
+		e.resize(bits);
+		obuf = n.getdata();
+		fwrite(obuf, bits, 1, pubkey);
+		fwrite(obuf, bits, 1, privkey);
+		free(obuf);
+		obuf = e.getdata();
+		fwrite(obuf, bits, 1, pubkey);
+		free(obuf);
+		obuf = d.getdata();
+		fwrite(obuf, bits, 1, privkey);
+		free(obuf);
+		fclose(pubkey);
+		fclose(privkey);
+		return RSA2_NO_ERR;
+	}
+	fclose(pubkey);
+	return RSA2_FILE_ERR;
+}
+
 rsa2_error rsa2_decrypt_file(char *keyfile, char *infile, char *outfile)
 { return rsa2_encrypt_file(keyfile, infile, outfile); }
 
