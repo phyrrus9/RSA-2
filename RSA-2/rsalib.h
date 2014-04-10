@@ -15,6 +15,7 @@
 typedef __uint16_t rsa2_error;
 
 #define RSA2_OUT_SIZE (0x08)
+#define RSA2_KEY_LEN  (0x200)
 
 #define RSA2_NO_ERR   (0x0000)
 #define RSA2_KEY_ERR  (0x0001)

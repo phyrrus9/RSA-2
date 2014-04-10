@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A05FC4218F61637002BD820 /* keygen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A05FC4118F61637002BD820 /* keygen.cpp */; };
+		4A05FC4818F61E57002BD820 /* arithmatichelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B118F4BBC900C88B2D /* arithmatichelpers.cpp */; };
+		4A05FC4918F61E5A002BD820 /* arithmaticops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B318F4BBC900C88B2D /* arithmaticops.cpp */; };
+		4A05FC4A18F61E5D002BD820 /* bigint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B418F4BBC900C88B2D /* bigint.cpp */; };
+		4A05FC4B18F61E60002BD820 /* bitwiseops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B618F4BBC900C88B2D /* bitwiseops.cpp */; };
+		4A05FC4C18F61E62002BD820 /* comparisonops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B718F4BBC900C88B2D /* comparisonops.cpp */; };
+		4A05FC4D18F61E65002BD820 /* miscoperations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B818F4BBC900C88B2D /* miscoperations.cpp */; };
+		4A05FC4E18F61E67002BD820 /* unarybitwiseops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B918F4BBC900C88B2D /* unarybitwiseops.cpp */; };
+		4A05FC4F18F61E6A002BD820 /* unaryops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1BA18F4BBC900C88B2D /* unaryops.cpp */; };
+		4A05FC5018F64198002BD820 /* rsalib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1A818F4BB8100C88B2D /* rsalib.cpp */; };
 		4A33E1A918F4BB8100C88B2D /* rsalib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1A818F4BB8100C88B2D /* rsalib.cpp */; };
 		4A33E1BB18F4BBC900C88B2D /* arithmatichelpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B118F4BBC900C88B2D /* arithmatichelpers.cpp */; };
 		4A33E1BC18F4BBC900C88B2D /* arithmaticops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E1B318F4BBC900C88B2D /* arithmaticops.cpp */; };
@@ -19,6 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		4A05FC3D18F61637002BD820 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		4A33E1A318F4BB8100C88B2D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -31,6 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A05FC3F18F61637002BD820 /* RSA2-keygen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RSA2-keygen"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A05FC4118F61637002BD820 /* keygen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = keygen.cpp; sourceTree = "<group>"; };
 		4A33E1A518F4BB8100C88B2D /* RSA-2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RSA-2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A33E1A818F4BB8100C88B2D /* rsalib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rsalib.cpp; sourceTree = "<group>"; };
 		4A33E1B118F4BBC900C88B2D /* arithmatichelpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = arithmatichelpers.cpp; path = bigint/arithmatichelpers.cpp; sourceTree = "<group>"; };
@@ -47,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4A05FC3C18F61637002BD820 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A33E1A218F4BB8100C88B2D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,10 +85,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A05FC4018F61637002BD820 /* RSA2-keygen */ = {
+			isa = PBXGroup;
+			children = (
+				4A05FC4118F61637002BD820 /* keygen.cpp */,
+			);
+			path = "RSA2-keygen";
+			sourceTree = "<group>";
+		};
 		4A33E19C18F4BB8100C88B2D = {
 			isa = PBXGroup;
 			children = (
 				4A33E1A718F4BB8100C88B2D /* RSA-2 */,
+				4A05FC4018F61637002BD820 /* RSA2-keygen */,
 				4A33E1A618F4BB8100C88B2D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4A33E1A518F4BB8100C88B2D /* RSA-2 */,
+				4A05FC3F18F61637002BD820 /* RSA2-keygen */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +141,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4A05FC3E18F61637002BD820 /* RSA2-keygen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A05FC4718F61637002BD820 /* Build configuration list for PBXNativeTarget "RSA2-keygen" */;
+			buildPhases = (
+				4A05FC3B18F61637002BD820 /* Sources */,
+				4A05FC3C18F61637002BD820 /* Frameworks */,
+				4A05FC3D18F61637002BD820 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RSA2-keygen";
+			productName = "RSA2-keygen";
+			productReference = 4A05FC3F18F61637002BD820 /* RSA2-keygen */;
+			productType = "com.apple.product-type.tool";
+		};
 		4A33E1A418F4BB8100C88B2D /* RSA-2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A33E1AE18F4BB8100C88B2D /* Build configuration list for PBXNativeTarget "RSA-2" */;
@@ -142,11 +197,29 @@
 			projectRoot = "";
 			targets = (
 				4A33E1A418F4BB8100C88B2D /* RSA-2 */,
+				4A05FC3E18F61637002BD820 /* RSA2-keygen */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4A05FC3B18F61637002BD820 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A05FC4B18F61E60002BD820 /* bitwiseops.cpp in Sources */,
+				4A05FC4A18F61E5D002BD820 /* bigint.cpp in Sources */,
+				4A05FC4218F61637002BD820 /* keygen.cpp in Sources */,
+				4A05FC4D18F61E65002BD820 /* miscoperations.cpp in Sources */,
+				4A05FC4E18F61E67002BD820 /* unarybitwiseops.cpp in Sources */,
+				4A05FC4F18F61E6A002BD820 /* unaryops.cpp in Sources */,
+				4A05FC5018F64198002BD820 /* rsalib.cpp in Sources */,
+				4A05FC4818F61E57002BD820 /* arithmatichelpers.cpp in Sources */,
+				4A05FC4918F61E5A002BD820 /* arithmaticops.cpp in Sources */,
+				4A05FC4C18F61E62002BD820 /* comparisonops.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A33E1A118F4BB8100C88B2D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,6 +239,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		4A05FC4518F61637002BD820 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4A05FC4618F61637002BD820 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		4A33E1AC18F4BB8100C88B2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -251,6 +342,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4A05FC4718F61637002BD820 /* Build configuration list for PBXNativeTarget "RSA2-keygen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A05FC4518F61637002BD820 /* Debug */,
+				4A05FC4618F61637002BD820 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4A33E1A018F4BB8100C88B2D /* Build configuration list for PBXProject "RSA-2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -267,6 +366,7 @@
 				4A33E1B018F4BB8100C88B2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

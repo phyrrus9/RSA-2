@@ -89,10 +89,10 @@ rsa2_error rsa2_write_keys(bigint n, bigint d, bigint e, unsigned int bits, char
 	sprintf(privkeyfile, "%s.pri", base);
 	if ((pubkey = fopen(pubkeyfile, "wb")) == NULL)
 		return RSA2_FILE_ERR;
-	if ((privkey = fopen(privkeyfile, "wb")) == NULL)
+	if ((privkey = fopen(privkeyfile, "wb")) != NULL)
 	{
 		n.resize(bits);
-		d.resize(bits);
+		//d.resize(bits);
 		e.resize(bits);
 		obuf = n.getdata();
 		fwrite(obuf, bits, 1, pubkey);
@@ -104,6 +104,8 @@ rsa2_error rsa2_write_keys(bigint n, bigint d, bigint e, unsigned int bits, char
 		obuf = d.getdata();
 		fwrite(obuf, bits, 1, privkey);
 		free(obuf);
+		fflush(pubkey);
+		fflush(privkey);
 		fclose(pubkey);
 		fclose(privkey);
 		return RSA2_NO_ERR;
@@ -115,4 +117,4 @@ rsa2_error rsa2_write_keys(bigint n, bigint d, bigint e, unsigned int bits, char
 rsa2_error rsa2_decrypt_file(char *keyfile, char *infile, char *outfile)
 { return rsa2_encrypt_file(keyfile, infile, outfile); }
 
-int main(){} //temporary
+//int main(){} //temporary
