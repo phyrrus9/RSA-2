@@ -109,6 +109,9 @@ int main(int argc, char * * argv)
 	d = bigint_modinverse(e, n);
 	printcontents(d, "d");
 	printf("\n\n0x%02x\n", rsa2_write_keys(n, d, e, RSA2_KEY_LEN));
+	//do a test
+	printf("0x%02x\n", rsa2_encrypt_file("rsa2.pub", "test.txt", "test.enc"));
+	printf("0x%02x\n", rsa2_decrypt_file("rsa2.pri", "test.enc", "test.dec"));
 	return 0;
 }
 
@@ -117,4 +120,19 @@ int main(int argc, char * * argv)
  * but it never seems to be correct. This should be the only real bug in the
  * keygen program. If anybody wants to take a look at it, that would be cool
  * also, this only compiles with XCode at the moment, until I gen a Makefile
+ */
+
+/*
+ * Seems as if rsalib also has an issue with encrypting:
+ * Original:
+ * 00000000  48 65 6c 6c 6f 2c 20 57  6f 72 6c 64 21 0a        |Hello, World!.|
+ * Encrypted:
+ * 00000000  48 00 00 00 00 00 00 c0  65 00 00 00 00 00 00 c0  |H.......e.......|
+ * 00000010  6c 00 00 00 00 00 00 c0  6c 00 00 00 00 00 00 c0  |l.......l.......|
+ * 00000020  6f 00 00 00 00 00 00 c0  2c 00 00 00 00 00 00 c0  |o.......,.......|
+ * 00000030  20 00 00 00 00 00 00 c0  57 00 00 00 00 00 00 c0  | .......W.......|
+ * 00000040  6f 00 00 00 00 00 00 c0  72 00 00 00 00 00 00 c0  |o.......r.......|
+ * 00000050  6c 00 00 00 00 00 00 c0  64 00 00 00 00 00 00 c0  |l.......d.......|
+ * 00000060  21 00 00 00 00 00 00 c0  0a 00 00 00 00 00 00 c0  |!...............|
+ * ALSO: decryption caused an abort.
  */

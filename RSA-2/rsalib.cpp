@@ -92,7 +92,7 @@ rsa2_error rsa2_write_keys(bigint n, bigint d, bigint e, unsigned int bits, char
 	if ((privkey = fopen(privkeyfile, "wb")) != NULL)
 	{
 		n.resize(bits);
-		//d.resize(bits);
+		d.resize(bits);
 		e.resize(bits);
 		obuf = n.getdata();
 		fwrite(obuf, bits, 1, pubkey);
